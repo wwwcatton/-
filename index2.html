@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HealthCare</title>
+    <link rel="stylesheet" href="stylebuy.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+        <div class="nav header_reg">
+            <div class="logo">
+                <a href="index.html" class="logo_link"><h4>AnimShop</h4></a>
+            </div>
+            <!-- <button class="burger">
+                <img src="img/menu.svg" alt="" height="50px">
+            </button> -->
+            <!--     -->
+            
+            <div class="links">
+                <a href="index.html" >Главная</a>
+                <a href="indexbuy.html">Заказы</a>
+                <a href="indexbuy.html">Корзина</a>
+                <a href="#" class="mainlink">Вход/Регистрация</a>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+        <section class="about" id="test">
+            <div class="cont">
+                <p id="message" >Пожалуйста, заполните все поля формы!</p> 
+                Имя:<br />  <input id="name" name="name" type="text" 
+                size="20" /><br /> 
+                
+                E-mail: <br /> <input id="email" name="email" type="text" 
+                size="20" /><br /> 
+        
+                Заголовок:<br />  <input id="head" name="head" type="text" 
+                size="20" /><br /> 
+        
+                Текст отзыва: <br /> <textarea id="text" name="text" type="text" 
+                size="20" > </textarea> <br /> 
+        
+                <input name="button" type="submit" value="Проверить" 
+                onClick="ValidMail();" />
+                
+            </div>
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+    </div>
+
+
+        
+
+        
+
+        <div class="footer">
+            <h2>AnimShop</h2>
+            <div class="footerlinks">
+                <a href="#" class="mainlink">не придуманно</a>
+                <a href="#">Вконтакте</a>
+                <a href="#">Telegram</a>
+                <a href="#">Mail</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function ValidMail() {
+         let re1 = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+         let re2 = /^[\w-\.]/i;
+         let myMail = document.getElementById('email').value;
+         let valid1 = re1.test(myMail);
+         let myName = document.getElementById('name').value;
+         let myHead = document.getElementById('head').value;
+         let myText = document.getElementById('text').value;
+         let valid2 = re2.test(myName+myHead+myText);
+
+         console.log(myName)
+         if (valid1 && valid2) {
+            alert("Ваш отзыв отправлен!");
+         }
+         else alert("Данные введены неверно!");
+        //  document.getElementById('message').innerHTML = output;
+         return valid;
+         
+
+        }
+        </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+            AOS.init();
+    </script>
+</body>
+</html>

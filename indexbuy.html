@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Корзина</title>
+        <link rel="stylesheet" href="stylebuy.css" />
+    </head>
+    <body>
+        
+        <div class="wrapper">
+            <div class="header">
+            <div class="nav">
+                <div class="logo color_text">
+                    <a href="index.html" class="logo_link color__text"><h4>AnimShop</h4></a>
+                </div>
+                <!-- <button class="burger">
+                    <img src="img/menu.svg" alt="" height="50px">
+                </button> -->
+                <!-- <input type="text" autocomplete="off" aria-autocomplete="list" placeholder="Поиск" class="input"> -->
+                
+                <div class="links">
+                    <a href="index.html" >Главная</a>
+                    <a href="indexbuy.html" >Заказы</a>
+                    <a href="indexbuy.html" class="mainlink">Корзина</a>
+                    <a href="index2.html" class="links__reg">Вход/Регистрация</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div id="container" class="buy__inner">
+            <div class="buy-info">
+                <div class="buy-address">
+                    Ваш адрес:
+                    <input type="text" name="" id="input-address">
+                </div>
+                <div class="sell">
+                    Ваша персональная скидка - 5%
+                </div>
+                <div class="full-price">
+                        Итоговая стоимость: <input type="text" name="productPrice" value="200" disabled="" id="full-price-input"> руб.
+                </div>
+            </div>
+            
+            
+            
+            <div class="buy-products">
+                
+                <div class="buy-product">
+                    <!-- <img src="img/card1.jpg" alt="" class="buy-product-img"> -->
+                    <div class="buy-text">
+                        <img src="img/card1.jpg" alt="" class="buy-product-img">
+                        <h1 class="buy-product-name">манга Это Мори "Многоцветье"</h1>
+                        <h1 class="buy-product-text">
+                        Мягкая обложка, 90 страниц<br>
+                        Размер 40 х 15 мм
+                        </h1>
+                        
+                    </div>
+                    
+                    <div class="buy-count">
+                        <div class="buy-count-btn">
+                            <span class="change minus min">
+                                <span>-</span>
+                            </span>
+                            <input type="text" name="productСount" value="1" id="count-input">
+                            <span class="change plus">
+                                <span>+</span>
+                            </span>
+                        </div>
+                        
+                        <div class="buy-price">
+                            <input type="text" name="productPrice" value="200" disabled="" id="price-input">
+                            <h1 class="buy-rub">руб.</h1>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                
+
+                
+            </div>
+        </div>
+        
+        
+        
+        <div class="footer">
+            <h2>AnimShop</h2>
+            <div class="footerlinks">
+                <a href="#" class="mainlink">не придуманно</a>
+                <a href="#">Вконтакте</a>
+                <a href="#">Telegram</a>
+                <a href="#">Mail</a>
+            </div>
+        </div>
+
+        <script>
+            document.querySelectorAll('.plus').forEach(item => {
+
+                item.addEventListener('click', function () {
+
+                    ++item.parentElement.querySelector('input').value;
+                    var val = item.parentElement.querySelector('input').value;
+                    var res = val*200;
+                    document.getElementById("price-input").value = res;
+                    document.getElementById("full-price-input").value = res;
+
+                });
+
+            });
+
+            document.querySelectorAll('.minus').forEach(item => {
+            
+                item.addEventListener('click', function () {
+                
+                    if (item.parentElement.querySelector('input').value < 2) {
+                        
+                        item.parentElement.querySelector('input').value = 1
+                        
+                        item.classList.add('min');
+                        
+                        
+                        
+                    }
+                    else{
+                        --item.parentElement.querySelector('input').value;
+                        var val = item.parentElement.querySelector('input').value;
+                        var res = document.getElementById("price-input").value - 200;
+                        document.getElementById("price-input").value = res;
+                        document.getElementById("full-price-input").value = res;
+                    }
+                
+                });
+
+            });
+
+            // function itog_price(){
+            //     var val = item.parentElement.querySelector('input').value;
+            //     document.getElementById("full-price").value = val;
+            // }
+            // // var val = document.getElementById("count-input").value;
+            // // var result = val*200;
+            // // document.getElementById("price-input").innerHTML = result;
+
+        </script>
+    </body>
+</html>
